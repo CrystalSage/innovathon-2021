@@ -3,7 +3,6 @@
 
     <style name="Theme.Innovathon21.NoActionBar">
         <item name="windowActionBar">false</item>
-        <item name="android:forceDarkAllowed">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 </resources>
