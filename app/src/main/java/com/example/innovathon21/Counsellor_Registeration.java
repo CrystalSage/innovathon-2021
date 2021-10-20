@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,6 +40,7 @@ public class Counsellor_Registeration extends AppCompatActivity {
     FirebaseAuth fAuth;
     private Uri mImageUri;
     StorageReference storageReference;
+    TextView tv;
     private static final int PICK_IMAGE_REQUEST = 1;
 
     @Override
@@ -57,6 +59,7 @@ public class Counsellor_Registeration extends AppCompatActivity {
             finish();
         }*/
 
+        tv=(TextView)findViewById(R.id.couns_edittext);
         name=(EditText)findViewById(R.id.student_name_signup_couns);
         email=(EditText)findViewById(R.id.student_email_signup_couns);
         pass=(EditText)findViewById(R.id.student_password_signup_couns);
@@ -67,6 +70,7 @@ public class Counsellor_Registeration extends AppCompatActivity {
         img_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                tv.setVisibility(View.INVISIBLE);
                 openFileChooser();
             }
         });
@@ -173,6 +177,7 @@ public class Counsellor_Registeration extends AppCompatActivity {
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(intent, PICK_IMAGE_REQUEST);
+        tv.setVisibility(View.INVISIBLE);
     }
 
     @Override
