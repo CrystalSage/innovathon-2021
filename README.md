@@ -8,6 +8,10 @@ Care4U allows fellow students in the campus to communicate and vanish their sorr
 
 # Screenshots
 
+![alt text](https://raw.githubusercontent.com/CrystalSage/innovathon-2021/master/screenshots/cloud.png)
+![alt text](https://raw.githubusercontent.com/CrystalSage/innovathon-2021/master/screenshots/home.jpeg)
+![alt text](https://raw.githubusercontent.com/CrystalSage/innovathon-2021/master/screenshots/register.png)
+
 # Release
 
 # Technical details
@@ -20,7 +24,7 @@ Care4U allows fellow students in the campus to communicate and vanish their sorr
 - Git (VCS)
 
 ## Design
-
+![alt text](https://raw.githubusercontent.com/CrystalSage/innovathon-2021/master/screenshots/care4u.png)
 ---
 
 
