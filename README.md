@@ -1,1 +1,32 @@
-# innovathon-2021
+# Care4U
+*Greetings!*
+
+Care4U is an app made with love by **Team Alpha** for the **Innovathon-2021**
+
+Care4U allows fellow students in the campus to communicate and vanish their sorrows and worries by allowing them to connect with advisors or facilitators on the campus, either by the name or anonymously.  We care about your mental health :)
+> The challenge is not to be perfect! It is to be whole!
+
+# Screenshots
+
+# Release
+
+# Technical details
+## Technologies used
+- Java (primary language)
+- Firebase (Firestore, API)
+- Jitsi (Based on WebRTC)
+- Picasso
+- Lottieanimation
+- Git (VCS)
+
+## Design
+
+---
+
+
+#Team Alpha
+From *Datta Meghe College of Engineering*,
+- **Amit Kulkarni**
+- **Shree Patil**
+- **Vedant Prabhu**
+
