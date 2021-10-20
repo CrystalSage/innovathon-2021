@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_4sdp"
-            android:text="Login to Continue"
+            android:text="Student Login"
             android:textColor="@color/primary_text"
             android:textSize="@dimen/_12ssp"
             android:textStyle="bold" />
