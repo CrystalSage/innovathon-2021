@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -37,9 +38,19 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
     implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation 'com.google.firebase:firebase-firestore:23.0.4'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    //for gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+
+    //lottieanimation for progressbar
+    implementation 'com.airbnb.android:lottie:3.4.0'
+
+    implementation "io.grpc:grpc-okhttp:1.32.2"
 
     // For different screens size
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
