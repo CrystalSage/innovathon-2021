@@ -15,6 +15,7 @@ Care4U allows fellow students in the campus to communicate and vanish their sorr
 ![alt text](https://raw.githubusercontent.com/CrystalSage/innovathon-2021/master/rn.png)
 ![alt text](https://raw.githubusercontent.com/CrystalSage/innovathon-2021/master/screenshots/register.png)
 ![alt text](https://raw.githubusercontent.com/CrystalSage/innovathon-2021/master/screenshots/home.jpeg)
+![alt text](https://raw.githubusercontent.com/CrystalSage/innovathon-2021/master/jitsi.jpeg)
 
 
 
