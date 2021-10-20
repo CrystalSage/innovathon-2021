@@ -69,10 +69,10 @@ public class Intro_Activity extends AppCompatActivity {
 
         //YoYo.with(Techniques.FadeInUp).duration(10000).repeat(10).playOn(intro_title);
         final List<ScreenItem> mList = new ArrayList<>();
-        boolean fresh_items = mList.add(new ScreenItem("WELCOME, USER!", "Making this world a better place, by Helpin' each other :)", R.drawable.helpinob));
-        mList.add(new ScreenItem("HERE TO HELP YOU", "Do not let your weaknesses get in the way of your communication ❤", R.drawable.lastslide));
-        mList.add(new ScreenItem("MINIMAL INTERFACE", "To connect seamlessly;\n With everyone, without limits", R.drawable.stepsslide));
-        mList.add(new ScreenItem("ALMOST THERE!", "So put on a smile, because happiness is a good conversation 😊", R.drawable.secondlast));
+        boolean fresh_items = mList.add(new ScreenItem("WELCOME, USER!", "Breathe. Let go. And remind yourself that this very moment is the only one you know you have for sure.", R.drawable.slide1));
+        mList.add(new ScreenItem("HERE TO HELP YOU", "Do not let your weaknesses get in the way of your communication ❤", R.drawable.slide2));
+        mList.add(new ScreenItem("MINIMAL INTERFACE", "To connect seamlessly;\n With everyone, without limits", R.drawable.slide3));
+        mList.add(new ScreenItem("ALMOST THERE!", "So put on a smile, because happiness is a good conversation 😊", R.drawable.slide4));
 
 
         // setup viewpager

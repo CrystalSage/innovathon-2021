@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,7 +20,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.makeramen.roundedimageview.RoundedImageView;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,12 +37,17 @@ public class Counsellor_Registeration extends AppCompatActivity {
     String email_couns,password,name_couns,userid;
     FirebaseFirestore firestore;
     FirebaseAuth fAuth;
+    private Uri mImageUri;
+    StorageReference storageReference;
+    private static final int PICK_IMAGE_REQUEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_counsellor_registeration);
 
+
+        storageReference= FirebaseStorage.getInstance().getReference();
         fAuth=FirebaseAuth.getInstance();
         firestore=FirebaseFirestore.getInstance();
 /*
@@ -53,6 +63,13 @@ public class Counsellor_Registeration extends AppCompatActivity {
         confirm_pass=(EditText)findViewById(R.id.student_password_signup_confirm_couns);
         img_view=(RoundedImageView)findViewById(R.id.imageprofile_couns);
         sign_up_couns=(Button)findViewById(R.id.buttonSignUp_couns);
+
+        img_view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFileChooser();
+            }
+        });
 
         sign_up_couns.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +91,10 @@ public class Counsellor_Registeration extends AppCompatActivity {
                 if(password.length() < 6){
                     pass.setError("Password Must be >= 6 Characters");
                     return;
+                }
+
+                if(mImageUri==null){
+                    Toast.makeText(Counsellor_Registeration.this, "PLS UPLOAD AN IMAGE", Toast.LENGTH_SHORT).show();
                 }
 
                 fAuth.createUserWithEmailAndPassword(email_couns,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -99,6 +120,7 @@ public class Counsellor_Registeration extends AppCompatActivity {
                                     Toast.makeText(Counsellor_Registeration.this, "Failed", Toast.LENGTH_SHORT).show();
                                 }
                             });
+                            startstorageprocessimage();
                             startActivity(new Intent(getApplicationContext(),Counsellor_Dashboard.class));
                         }
                     }
@@ -109,5 +131,66 @@ public class Counsellor_Registeration extends AppCompatActivity {
 
 
 
+    }
+
+    private void startstorageprocessimage() {
+        if(mImageUri==null){
+            Toast.makeText(Counsellor_Registeration.this, "PLS UPLOAD AN IMAGE", Toast.LENGTH_SHORT).show();
+        }
+
+        final StorageReference reference=storageReference.child("image_files/"+System.currentTimeMillis()+".jpeg");
+        reference.putFile(mImageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+
+                        DocumentReference documentReference = FirebaseFirestore.getInstance().collection("couns_accounts").document(fAuth.getUid());
+                        Map<String,Object> user= new HashMap<>();
+                        user.put("imageUrl",uri.toString());
+                        documentReference.update(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(Counsellor_Registeration.this, "Photo Updated", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(Counsellor_Registeration.this, "Photo Updatation Failed", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+
+            }
+        });
+
+    }
+
+    private void openFileChooser() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK
+                && data != null && data.getData() != null) {
+            mImageUri = data.getData();
+            Picasso.Builder builder = new Picasso.Builder(this);
+            builder.listener(new Picasso.Listener()
+            {
+                @Override
+                public void onImageLoadFailed(Picasso picasso, Uri uri, Exception exception)
+                {
+                    exception.printStackTrace();
+                }
+            });
+            builder.build().load(mImageUri).into(img_view);
+        }
     }
 }
