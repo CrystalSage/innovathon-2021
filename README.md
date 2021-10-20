@@ -13,6 +13,7 @@ Care4U allows fellow students in the campus to communicate and vanish their sorr
 ![alt text](https://raw.githubusercontent.com/CrystalSage/innovathon-2021/master/screenshots/register.png)
 
 # Release
+[V1](https://github.com/CrystalSage/innovathon-2021/releases/download/v1/Care4U.apk)
 
 # Technical details
 ## Technologies used
@@ -28,7 +29,7 @@ Care4U allows fellow students in the campus to communicate and vanish their sorr
 ---
 
 
-#Team Alpha
+# Team Alpha
 From *Datta Meghe College of Engineering*,
 - **Amit Kulkarni**
 - **Shree Patil**
