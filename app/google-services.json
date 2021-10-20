@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1040673202710",
+    "project_id": "care-4-you-20cd4",
+    "storage_bucket": "care-4-you-20cd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040673202710:android:a4871ec85d9687b05b8b37",
+        "android_client_info": {
+          "package_name": "com.example.innovathon21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040673202710-m6avq43qjhcun81aco207qhna6qg7pmd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5USmFT9vkAgGv347kmfRncCi2rnTGvpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040673202710-m6avq43qjhcun81aco207qhna6qg7pmd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
