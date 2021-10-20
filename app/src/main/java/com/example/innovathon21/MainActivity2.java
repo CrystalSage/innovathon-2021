@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity2 extends AppCompatActivity {
-    Button couns;
+    Button couns,student,test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +16,22 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         couns=(Button)findViewById(R.id.couns_login);
+        student=(Button)findViewById(R.id.student_button);
+        test=(Button)findViewById(R.id.sasa);
+
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),Test.class));
+            }
+        });
+
+        student.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),SignInActivity.class));
+            }
+        });
 
         couns.setOnClickListener(new View.OnClickListener() {
             @Override

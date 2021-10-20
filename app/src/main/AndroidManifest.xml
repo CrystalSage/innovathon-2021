@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Innovathon21">
         <activity
+            android:name=".Test"
+            android:exported="true" />
+        <activity
             android:name=".Counsellor_Registeration"
             android:exported="false" />
         <activity
