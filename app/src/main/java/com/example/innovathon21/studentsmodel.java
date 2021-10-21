@@ -3,35 +3,35 @@ package com.example.innovathon21;
 public class studentsmodel {
     public studentsmodel() {
     }
-    String name_student,email,img_url;
+    String name,Email,imageUrl;
 
-    public studentsmodel(String name_student, String email, String img_url) {
-        this.name_student = name_student;
-        this.email = email;
-        this.img_url = img_url;
+    public studentsmodel(String name, String email, String imageUrl) {
+        this.name = name;
+        Email = email;
+        this.imageUrl = imageUrl;
     }
 
-    public String getName_student() {
-        return name_student;
+    public String getName() {
+        return name;
     }
 
-    public void setName_student(String name_student) {
-        this.name_student = name_student;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
     }
 
-    public String getImg_url() {
-        return img_url;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImg_url(String img_url) {
-        this.img_url = img_url;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

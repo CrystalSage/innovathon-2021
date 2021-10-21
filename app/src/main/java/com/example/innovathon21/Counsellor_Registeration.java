@@ -111,7 +111,7 @@ public class Counsellor_Registeration extends AppCompatActivity {
                             Map<String,Object> user= new HashMap<>();
                             user.put("Email",email_couns);
                             user.put("Password",password);
-                            user.put("First Name",name_couns);
+                            user.put("name",name_couns);
                             documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {

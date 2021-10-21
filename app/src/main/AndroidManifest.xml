@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.innovathon21">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Innovathon21">
+        <activity
+            android:name=".New_Conversation_couns"
+            android:exported="false" />
+        <activity
+            android:name=".recent_conv_counc"
+            android:exported="false" />
+        <activity
+            android:name=".Students_data_view"
+            android:exported="false" />
         <activity
             android:name=".Student_Dashboard"
             android:exported="true" />
@@ -50,11 +60,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Intro_Activity" />
+
         <service
             android:name=".firebase.MessagingService"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
     </application>

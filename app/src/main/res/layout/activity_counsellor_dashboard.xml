@@ -8,6 +8,7 @@
     tools:context=".Counsellor_Dashboard">
 
     <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/fetch_image_couns"
         android:layout_width="49dp"
         android:layout_height="52dp"
         android:background="@drawable/background_icon"
@@ -32,29 +33,74 @@
         app:layout_constraintVertical_bias="0.024" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/fetch_textview_couns"
         android:layout_width="256dp"
         android:layout_height="41dp"
         android:text="Your Name Here"
-        android:textColor="@color/white"
-        android:textStyle="bold"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="0.298" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/students_displayed"
-        android:layout_width="403dp"
-        android:layout_height="632dp"
+    <Button
+        android:id="@+id/stdents_data_couns"
+        android:layout_width="190dp"
+        android:layout_height="81dp"
+        android:background="@color/for_buttons"
+        android:text="View Students and Data"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.838" />
+        app:layout_constraintVertical_bias="0.552" />
+
+    <Button
+        android:id="@+id/recent_messages_coun"
+        android:layout_width="190dp"
+        android:layout_height="81dp"
+        android:text="New Messages and conversations"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.707" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="400dp"
+        android:layout_height="51dp"
+        android:text="Welcome Back"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.164" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="66dp"
+        android:layout_height="63dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
