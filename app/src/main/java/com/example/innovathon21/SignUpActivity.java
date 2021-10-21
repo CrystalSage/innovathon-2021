@@ -50,7 +50,7 @@ private TextView signIn;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
         signIn = (TextView) findViewById(R.id.textSignIn);
-    addImage=(TextView)findViewById(R.id.addImage);
+        addImage=(TextView)findViewById(R.id.addImage);
         name=(EditText)findViewById(R.id.student_name_signup);
         email=(EditText)findViewById(R.id.student_email_signup);
         pass=(EditText)findViewById(R.id.student_password_signup);
@@ -96,7 +96,7 @@ private TextView signIn;
                     return;
                 }
                 if(mImageUri==null){
-                    Toast.makeText(SignUpActivity.this, "PLS UPLOAD AN IMAGE", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "PLEASE UPLOAD AN IMAGE", Toast.LENGTH_SHORT).show();
                 }
 
                 fAuth.createUserWithEmailAndPassword(email_stu,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -143,7 +143,7 @@ private TextView signIn;
 
     private void startstorageprocessimage() {
         if(mImageUri==null){
-            Toast.makeText(SignUpActivity.this, "PLS UPLOAD AN IMAGE", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SignUpActivity.this, "PLEASE UPLOAD AN IMAGE", Toast.LENGTH_SHORT).show();
         }
 
         final StorageReference reference=storageReference.child("image_files/"+System.currentTimeMillis()+".jpeg");
@@ -165,7 +165,7 @@ private TextView signIn;
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Toast.makeText(SignUpActivity.this, "Photo Updatation Failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUpActivity.this, "Failed to update the photo", Toast.LENGTH_SHORT).show();
                             }
                         });
                     }
